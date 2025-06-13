@@ -225,8 +225,8 @@ def send_daily_birthdays():
 # --- Configuración del Scheduler con zona horaria de Bogotá ---
 # Se crea un scheduler en segundo plano con la zona horaria especificada.
 scheduler = BackgroundScheduler(timezone=pytz.timezone('America/Bogota'))
-# Añade la tarea para que se ejecute todos los días a las 8:00 AM (hora de Bogotá)
-scheduler.add_job(send_daily_birthdays, 'cron', hour=8, minute=15)
+# Añade la tarea para que se ejecute todos los días a las 4:30 PM (hora de Bogotá)
+scheduler.add_job(send_daily_birthdays, 'cron', hour=15, minute=18)
 scheduler.start() # Inicia el scheduler
 
 # Registra una función para asegurar que el scheduler se apague limpiamente cuando la aplicación se cierre
